@@ -2,6 +2,14 @@
 # yarn lockfile v1
 
 
+"@agm/core@^1.0.0-beta.2":
+  version "1.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@agm/core/-/core-1.0.0-beta.2.tgz#da15c0a5e86fe9e1178f14c36a3e0ffc14f9ad77"
+
+"@agm/snazzy-info-window@^1.0.0-beta.2":
+  version "1.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@agm/snazzy-info-window/-/snazzy-info-window-1.0.0-beta.2.tgz#c30c9afa00a3427a99dd1ea521596e635691fff5"
+
 "@angular-devkit/build-optimizer@~0.0.37":
   version "0.0.38"
   resolved "https://registry.yarnpkg.com/@angular-devkit/build-optimizer/-/build-optimizer-0.0.38.tgz#1a94715fa79e0894915411a4febf9356edf62a8b"
@@ -29,9 +37,15 @@
     minimist "^1.2.0"
     rxjs "^5.5.6"
 
-"@angular/animations@^5.1.0":
+"@angular/animations@^5.2.0":
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-5.2.0.tgz#a3ce02c01b074f0de7c2c23c1f08b4a00f0bec5f"
+  dependencies:
+    tslib "^1.7.1"
+
+"@angular/cdk@^5.0.4":
+  version "5.0.4"
+  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-5.0.4.tgz#f76a268e404f41aff0e908b21e7de9a5dfc07150"
   dependencies:
     tslib "^1.7.1"
 
@@ -141,6 +155,12 @@
 "@angular/language-service@^5.1.0":
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/@angular/language-service/-/language-service-5.2.0.tgz#c8fab0ca8cbd79dafc96fad844ae69e9038b69ad"
+
+"@angular/material@^5.0.4":
+  version "5.0.4"
+  resolved "https://registry.yarnpkg.com/@angular/material/-/material-5.0.4.tgz#8efb2fb12023711dbdaac5dc7b588096b40b0f64"
+  dependencies:
+    tslib "^1.7.1"
 
 "@angular/platform-browser-dynamic@^5.1.0":
   version "5.2.0"
@@ -5558,6 +5578,10 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
     hash-base "^2.0.0"
     inherits "^2.0.1"
 
+roboto-fontface@^0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/roboto-fontface/-/roboto-fontface-0.8.0.tgz#031a83c8f79932801a57d83bf743f37250163499"
+
 run-queue@^1.0.0, run-queue@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/run-queue/-/run-queue-1.0.3.tgz#e848396f057d223f24386924618e25694161ec47"
@@ -5813,6 +5837,10 @@ smtp-connection@2.12.0:
   dependencies:
     httpntlm "1.6.1"
     nodemailer-shared "1.1.0"
+
+snazzy-info-window@^1.1.0:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/snazzy-info-window/-/snazzy-info-window-1.1.1.tgz#3b4da4f41c3aa6aa4ad878ecb97c3c2eb5c89b2f"
 
 sntp@1.x.x:
   version "1.0.9"
