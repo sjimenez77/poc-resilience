@@ -33,5 +33,5 @@ export class AppComponent {
       'Big Circle': circle([46.95, -122], { radius: 5000 }),
       'Big Square': polygon([[46.8, -121.55], [46.9, -121.55], [46.9, -121.7], [46.8, -121.7]])
     }
-  }
+  };
 }
