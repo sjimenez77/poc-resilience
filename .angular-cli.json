@@ -7,7 +7,10 @@
     {
       "root": "src",
       "outDir": "dist",
-      "assets": ["assets", "favicon.ico"],
+      "assets": [
+        "assets",
+        "favicon.ico"
+      ],
       "index": "index.html",
       "main": "main.ts",
       "polyfills": "polyfills.ts",
@@ -17,8 +20,8 @@
       "prefix": "app",
       "styles": [
         "styles.scss",
-        "../node_modules/snazzy-info-window/dist/snazzy-info-window.css",
-        "../node_modules/roboto-fontface/css/roboto/roboto-fontface.css"
+        "../node_modules/roboto-fontface/css/roboto/roboto-fontface.css",
+        "../node_modules/leaflet/dist/leaflet.css"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",

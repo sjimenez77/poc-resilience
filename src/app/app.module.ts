@@ -7,22 +7,22 @@ import { MatButtonModule, MatCheckboxModule } from '@angular/material';
 import { AppComponent } from './app.component';
 
 // add these imports
-import { AgmCoreModule } from '@agm/core';
-import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
     FormsModule,
-    AgmCoreModule.forRoot({
+    /* AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAsq4y4v6SBh9btsD8SjxlcG3RM8nFwpBo',
     }),
-    AgmSnazzyInfoWindowModule,
+    AgmSnazzyInfoWindowModule, */
+    LeafletModule.forRoot(),
     MatButtonModule,
     MatCheckboxModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

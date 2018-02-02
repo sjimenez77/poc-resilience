@@ -1,18 +1,11 @@
-<agm-map [latitude]="51.673858" [longitude]="7.815982" [styles]="dark ? mapStyle : mapStyleB">
-  <agm-marker [latitude]="51.673858" [longitude]="7.815982">
-    <agm-snazzy-info-window [maxWidth]="200" [closeWhenOthersOpen]="true">
-      <ng-template>
-        Window test message
-      </ng-template>
-    </agm-snazzy-info-window>
-  </agm-marker>
-</agm-map>
+<div class="map" leaflet [leafletOptions]="options" [leafletLayersControl]="layersControl">
+</div>
 
 <div class="menu">
   <div class="menu-bar">
     <span class="menu-bar-title">MENU</span>
   </div>
   <div class="theme-checkbox">
-    <mat-checkbox [(ngModel)]="dark">Dark map</mat-checkbox>
+    <mat-checkbox [(ngModel)]="dark">Checkbox sample</mat-checkbox>
   </div>
 </div>

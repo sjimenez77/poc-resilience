@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { tileLayer, latLng, circle, polygon } from 'leaflet';
 
 @Component({
   selector: 'app-root',
@@ -6,250 +7,31 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'My first AGM project';
-  lat = 51.678418;
-  lng = 7.809007;
-  dark = true;
-  mapStyle = [
-    {
-      featureType: 'all',
-      elementType: 'labels.text.fill',
-      stylers: [
-        {
-          color: '#ffffff',
-        },
-      ],
-    },
-    {
-      featureType: 'all',
-      elementType: 'labels.text.stroke',
-      stylers: [
-        {
-          visibility: 'on',
-        },
-        {
-          color: '#3e606f',
-        },
-        {
-          weight: 2,
-        },
-        {
-          gamma: 0.84,
-        },
-      ],
-    },
-    {
-      featureType: 'all',
-      elementType: 'labels.icon',
-      stylers: [
-        {
-          visibility: 'off',
-        },
-      ],
-    },
-    {
-      featureType: 'administrative',
-      elementType: 'geometry',
-      stylers: [
-        {
-          weight: 0.6,
-        },
-        {
-          color: '#1a3541',
-        },
-      ],
-    },
-    {
-      featureType: 'landscape',
-      elementType: 'geometry',
-      stylers: [
-        {
-          color: '#2c5a71',
-        },
-      ],
-    },
-    {
-      featureType: 'poi',
-      elementType: 'geometry',
-      stylers: [
-        {
-          color: '#406d80',
-        },
-      ],
-    },
-    {
-      featureType: 'poi.park',
-      elementType: 'geometry',
-      stylers: [
-        {
-          color: '#2c5a71',
-        },
-      ],
-    },
-    {
-      featureType: 'road',
-      elementType: 'geometry',
-      stylers: [
-        {
-          color: '#29768a',
-        },
-        {
-          lightness: -37,
-        },
-      ],
-    },
-    {
-      featureType: 'transit',
-      elementType: 'geometry',
-      stylers: [
-        {
-          color: '#406d80',
-        },
-      ],
-    },
-    {
-      featureType: 'water',
-      elementType: 'geometry',
-      stylers: [
-        {
-          color: '#193341',
-        },
-      ],
-    },
-  ];
+  title = 'My first Leaflet project';
+  options = {
+    layers: [
+      tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: 'Open Street Map' })
+    ],
+    zoom: 10,
+    center: latLng(46.879966, -121.726909)
+  };
 
-  mapStyleB = [
-    {
-      featureType: 'administrative',
-      elementType: 'all',
-      stylers: [
-        {
-          saturation: '-100',
-        },
-      ],
+  layersControl = {
+    baseLayers: {
+      'Open Street Map': tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: 'Open Street Map' }),
+      'Open Cycle Map': tileLayer('http://{s}.tile.opencyclemap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: 'Open Cycle Map' }),
+      // tslint:disable-next-line:max-line-length
+      'MapBox': tileLayer('https://api.mapbox.com/styles/v1/sjimenez77/cjd5wyiwe6l7h2ska1njg42xm/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic2ppbWVuZXo3NyIsImEiOiJjamQ1d3h4dTk0anBkMzJvN3VqOGRmb3UwIn0.rlmkQfmQyHl2iDETwxa1QQ', {
+        maxZoom: 18,
+        // tslint:disable-next-line:max-line-length
+        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+        id: 'mapbox.streets',
+        accessToken: 'pk.eyJ1Ijoic2ppbWVuZXo3NyIsImEiOiJjamQ1d3h4dTk0anBkMzJvN3VqOGRmb3UwIn0.rlmkQfmQyHl2iDETwxa1QQ'
+      })
     },
-    {
-      featureType: 'administrative',
-      elementType: 'geometry',
-      stylers: [
-        {
-          visibility: 'simplified',
-        },
-      ],
-    },
-    {
-      featureType: 'administrative.province',
-      elementType: 'all',
-      stylers: [
-        {
-          visibility: 'off',
-        },
-      ],
-    },
-    {
-      featureType: 'landscape',
-      elementType: 'all',
-      stylers: [
-        {
-          saturation: -100,
-        },
-        {
-          lightness: 65,
-        },
-        {
-          visibility: 'on',
-        },
-      ],
-    },
-    {
-      featureType: 'poi',
-      elementType: 'all',
-      stylers: [
-        {
-          saturation: -100,
-        },
-        {
-          lightness: '50',
-        },
-        {
-          visibility: 'simplified',
-        },
-      ],
-    },
-    {
-      featureType: 'road',
-      elementType: 'all',
-      stylers: [
-        {
-          saturation: '-100',
-        },
-      ],
-    },
-    {
-      featureType: 'road.highway',
-      elementType: 'all',
-      stylers: [
-        {
-          visibility: 'simplified',
-        },
-      ],
-    },
-    {
-      featureType: 'road.arterial',
-      elementType: 'all',
-      stylers: [
-        {
-          lightness: '30',
-        },
-      ],
-    },
-    {
-      featureType: 'road.local',
-      elementType: 'all',
-      stylers: [
-        {
-          lightness: '40',
-        },
-      ],
-    },
-    {
-      featureType: 'transit',
-      elementType: 'all',
-      stylers: [
-        {
-          saturation: -100,
-        },
-        {
-          visibility: 'simplified',
-        },
-      ],
-    },
-    {
-      featureType: 'water',
-      elementType: 'geometry',
-      stylers: [
-        {
-          hue: '#ffff00',
-        },
-        {
-          lightness: -25,
-        },
-        {
-          saturation: -97,
-        },
-      ],
-    },
-    {
-      featureType: 'water',
-      elementType: 'labels',
-      stylers: [
-        {
-          lightness: -25,
-        },
-        {
-          saturation: -100,
-        },
-      ],
-    },
-  ];
+    overlays: {
+      'Big Circle': circle([46.95, -122], { radius: 5000 }),
+      'Big Square': polygon([[46.8, -121.55], [46.9, -121.55], [46.9, -121.7], [46.8, -121.7]])
+    }
+  }
 }
