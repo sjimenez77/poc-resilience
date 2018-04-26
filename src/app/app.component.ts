@@ -35,9 +35,22 @@ export class AppComponent {
         'http://{s}.tile.opencyclemap.org/{z}/{x}/{y}.png',
         { maxZoom: 18, attribution: 'Open Cycle Map' },
       ),
-      MapBox: tileLayer(
+      'MapBox Dark': tileLayer(
         // tslint:disable-next-line:max-line-length
         'https://api.mapbox.com/styles/v1/sjimenez77/cjd5wyiwe6l7h2ska1njg42xm/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic2ppbWVuZXo3NyIsImEiOiJjamQ1d3h4dTk0anBkMzJvN3VqOGRmb3UwIn0.rlmkQfmQyHl2iDETwxa1QQ',
+        {
+          maxZoom: 18,
+          attribution:
+            // tslint:disable-next-line:max-line-length
+            'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+          id: 'mapbox.streets',
+          accessToken:
+            'pk.eyJ1Ijoic2ppbWVuZXo3NyIsImEiOiJjamQ1d3h4dTk0anBkMzJvN3VqOGRmb3UwIn0.rlmkQfmQyHl2iDETwxa1QQ',
+        },
+      ),
+      'MapBox Color': tileLayer(
+        // tslint:disable-next-line:max-line-length
+        'https://api.mapbox.com/styles/v1/sjimenez77/cjggm8ueu00442stj235alkcc/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic2ppbWVuZXo3NyIsImEiOiJjamQ1d3h4dTk0anBkMzJvN3VqOGRmb3UwIn0.rlmkQfmQyHl2iDETwxa1QQ',
         {
           maxZoom: 18,
           attribution:
